@@ -2,9 +2,11 @@
 	export let text = '';
 	export let hint = '';
 
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 
 	let paper: HTMLElement;
+
+	let oldText = text;
 
 	onMount(() => {
 		paper.focus();
@@ -17,14 +19,12 @@
 	spellcheck={false}
 	bind:value={text}
 	bind:this={paper}
-	on:beforeinput={(e) => {
-		e.preventDefault();
-		if (e.inputType !== 'insertLineBreak') {
-			if (e.data) {
-				text += e.data;
-			}
+	on:input={async () => {
+		await tick();
+		if (!text.startsWith(oldText)) {
+			text = oldText;
 		} else {
-			text += '\n';
+			oldText = text;
 		}
 	}}
 />

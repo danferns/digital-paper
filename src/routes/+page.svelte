@@ -36,15 +36,19 @@
 </svelte:head>
 
 <div class="container">
-	<Paper hint="a fresh page..." bind:text />
+	{#key paperStore}
+		<Paper hint="a fresh page..." bind:text />
+	{/key}
 </div>
 
 <div class="tools">
-	<Button on:click={() => {
-		const freshPaperStore = createFreshPaper();
-		text = get(freshPaperStore).text;
-		paperStore = freshPaperStore;
-	}}>+</Button>
+	<Button
+		on:click={() => {
+			const freshPaperStore = createFreshPaper();
+			text = get(freshPaperStore).text;
+			paperStore = freshPaperStore;
+		}}>+</Button
+	>
 </div>
 
 <style>
