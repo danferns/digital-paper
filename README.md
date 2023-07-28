@@ -8,6 +8,9 @@ Anything you write will stay there, giving it the kind of permanence akin to wri
 The goal isn't to get perfect, typo-free writing on the first try, but rather to be accepting of flaws,
 so you can focus on getting the ideas down first, and only then do some editing in a later pass.
 
+![image](https://github.com/danferns/digital-paper/assets/57069381/11726ecb-349e-4e6a-b981-3543089342bf)
+
+
 ## Developing
 
 Once you've cloned the repository and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
