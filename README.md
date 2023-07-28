@@ -35,6 +35,7 @@ You can preview the production build with `npm run preview`.
 ## License
 
 Digital Paper: No more hitting backspace or undo, like pen on paper!
+
 Copyright (C) 2023  Daniel Fernandes
 
 This program is free software: you can redistribute it and/or modify
