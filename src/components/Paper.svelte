@@ -18,11 +18,13 @@
 	bind:value={text}
 	bind:this={paper}
 	on:beforeinput={(e) => {
+		e.preventDefault();
 		if (e.inputType !== 'insertLineBreak') {
-			e.preventDefault();
 			if (e.data) {
 				text += e.data;
 			}
+		} else {
+			text += '\n';
 		}
 	}}
 />
