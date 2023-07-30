@@ -2,11 +2,7 @@
 	import { onMount } from 'svelte';
 	import Paper from '../components/Paper.svelte';
 	import Button from '../components/Button.svelte';
-	import {
-		createFreshPaper,
-		getPaperByTimeString,
-		listStoredPapers
-	} from '../typescript/PaperStore';
+	import { createFreshPaper, loadPaperOnMount } from '../typescript/PaperStore';
 	import { get, type Writable } from 'svelte/store';
 	import type { PaperType } from '../typescript/Paper';
 
@@ -21,18 +17,14 @@
 	}
 
 	onMount(() => {
-		const existingPapers = listStoredPapers();
-		if (existingPapers.length === 0) {
-			paperStore = createFreshPaper();
-		} else {
-			paperStore = getPaperByTimeString(existingPapers[existingPapers.length - 1]);
-			text = $paperStore.text;
-		}
+		paperStore = loadPaperOnMount();
+		text = $paperStore.text;
 	});
 </script>
 
 <svelte:head>
 	<title>paper</title>
+	<meta name="description" content="a writing app with no backspace or undo" />
 </svelte:head>
 
 <div class="container">
