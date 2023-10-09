@@ -12,11 +12,9 @@ so you can focus on getting the ideas down first, and only then do some editing 
 
 ## Obsidian Plugin
 
-digital paper is now available as an [Obsidian plugin](https://github.com/danferns/digital-paper-obsidian-plugin)! Here's a link, but you can also find it on their Community Plugins section.
+digital paper is now available as an [Obsidian plugin](https://obsidian.md/plugins?id=digital-paper)! 
 
-```
-obsidian://show-plugin?id=digital-paper
-```
+[[Source code](https://github.com/danferns/digital-paper-obsidian-plugin)]
 
 ## Developing
 
